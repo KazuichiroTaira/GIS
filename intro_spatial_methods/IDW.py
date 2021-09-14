@@ -30,7 +30,10 @@ def display_image(filename="test_image_gray.tif"):
     # n_rows, n_columns = image.shape
     fig, ax = plt.subplots()
     ax.imshow(image, cmap='gray', vmin=0, vmax=255)
-    ax.axis('off')
+    ax.set_axis_off()
+
+    fig.tight_layout(pad=0, h_pad=0, w_pad=0)
+    plt.savefig('image.png', bbox_inches='tight', pad_inches=0)
     plt.show()
 
 
@@ -81,21 +84,23 @@ def u(x, neighbours_x, neighbours_u, n=3):
 
 def main():
 
-    neighbours_u = [10, 4, 18]
-    neighbours_x = [3, 0, 5]
-    x = 2
-    u_x = u(x=x, neighbours_u=neighbours_u, neighbours_x=neighbours_x)
-    print(u_x)
+    # neighbours_u = [10, 4, 18]
+    # neighbours_x = [3, 0, 5]
+    # x = 2
+    # u_x = u(x=x, neighbours_u=neighbours_u, neighbours_x=neighbours_x)
+    # print(u_x)
+    #
+    # neighbours_u = [10, 4, 18]
+    # neighbours_x = [
+    #     [10, 4],
+    #     [2, 3],
+    #     [3, 6]
+    # ]
+    # x = [3, 4]
+    # u_x = u(x=x, neighbours_u=neighbours_u, neighbours_x=neighbours_x)
+    # print(u_x)
 
-    neighbours_u = [10, 4, 18]
-    neighbours_x = [
-        [10, 4],
-        [2, 3],
-        [3, 6]
-    ]
-    x = [3, 4]
-    u_x = u(x=x, neighbours_u=neighbours_u, neighbours_x=neighbours_x)
-    print(u_x)
+    display_image()
 
     # filename1 = "camera_orientation_info.txt"
     # read_camera_orientation_info(filename1)
