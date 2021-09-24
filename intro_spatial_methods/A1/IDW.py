@@ -31,9 +31,7 @@ def read_camera_orientation_info(filename="camera_orientation_info.txt"):
 
 
 def read_laserdata(filename="laserdata.txt"):
-
     df = pd.read_csv(filename, sep=' ', header=None)
-    # df = pd.DataFrame(filename, sep=' ', header=None)
     laser_data = df.to_numpy()
     return laser_data
 
@@ -111,15 +109,17 @@ def main():
     laser_xy = laser_data[:, :2]
     print(f'x-coordinate: min={laser_x.min()}, max={laser_x.max()}')
     print(f'y-coordinate: min={laser_y.min()}, max={laser_y.max()}')
+
     orthophoto = read_image()
 
     print("read camera orientation")
     pp_x, pp_y, c, r, x_0, y_0, z_0 = read_camera_orientation_info()
     print(f'pp_x = {pp_x}, pp_y = {pp_y}, c = {c}, r = {r}, x_0 = {x_0}, y_0 = {y_0}, z_0 = {z_0}')
     print("*" * 30)
+
     tree = KDTree(laser_xy)
 
-    pixels_rows, pixels_columns = 1, 3 # orthophoto.shape
+    pixels_rows, pixels_columns = 1, 3         # orthophoto.shape
     DEM = np.zeros((pixels_rows, pixels_columns))
 
     x_start = 6111.4
@@ -142,30 +142,6 @@ def main():
             DEM[i, j] = interpolated_height
 
     print(DEM)
-    # print()
-    # print("laser_data")
-    # print(laser_data)
-
-    # zeros = []
-    #
-    # for i in range(len(laser_data)+1):
-    #     i = 0
-    #     zeros.append(i)
-    #
-    #
-    #
-    # for i in zeros:
-    #     print(i)
-
-    # z = np.zeros(len(laser_data))
-    #
-    # for i in laser_data:
-    #     i = neighbours_u
-    #     z =
-
-
-
-
 
 
     # neighbours_u = [10, 4, 18]
@@ -173,9 +149,6 @@ def main():
     # x = 2
     # u_x = u(x=x, neighbours_u=neighbours_u, neighbours_x=neighbours_x)
     # print(u_x)
-
-
-
 
     # neighbours_u = [10, 4, 18]
     # neighbours_x = [
@@ -187,11 +160,7 @@ def main():
     # u_x = u(x=x, neighbours_u=neighbours_u, neighbours_x=neighbours_x)
     # print(u_x)
 
-
-
-
-
     # display_image()
 
-
-main()
+if __name__ == "__main__":
+    main()

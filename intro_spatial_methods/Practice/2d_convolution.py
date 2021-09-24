@@ -1,5 +1,4 @@
-import scipy
-from scipy import signal
+import scipy.signal
 
 
 def main():
