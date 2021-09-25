@@ -52,42 +52,5 @@ def main():
         f"laser_y_stop = {laser_y_stop}\n\n"
     )
 
-    # x_start = laser_x.min()  # 6088.331
-    # x_end = laser_x.max()    # 6129.6
-    # len_x = x_end - x_end
-    # x_points = len_x / grid_size
-    # n_x_cod = int(x_points)
-    #
-    # y_start = laser_y.min()  # 5226.271
-    # y_end = laser_y.max()    # 5276.468
-    # len_y = y_end - y_end
-    # y_points = len_y / grid_size
-    # n_y_cod = int(y_points)
-
-    # print("*" * 100)
-    #
-    # pixel_x_start = x_start
-    # pixel_y_start = y_start # - n_pixel_rows*grid_size
-    #
-    # pixel_x_stop = x_start + n_pixel_columns*grid_size
-    # pixel_y_stop = y_start + n_pixel_rows*grid_size
-    #
-    # laser_x_start = laser_x.min()  # 6088.331
-    # laser_y_start = laser_y.min()
-    #
-    # laser_x_stop = laser_x.max()
-    # laser_y_stop = laser_y.max()
-    #
-    # print(
-    #     f"pixel_x_start = {pixel_x_start}\n"
-    #     f"pixel_y_start = {pixel_y_start}\n\n"
-    #     f"pixel_x_stop = {pixel_x_stop}\n"
-    #     f"pixel_y_stop = {pixel_y_stop}\n\n"
-    #     f"laser_x_start = {laser_x_start}\n"
-    #     f"laser_y_start = {laser_y_start}\n\n"
-    #     f"laser_x_stop = {laser_x_stop}\n"
-    #     f"laser_y_stop = {laser_y_stop}\n\n"
-    # )
-
 
 main()
