@@ -65,6 +65,8 @@ def create_orthophoto_fit_lazer(laser_x_min, laser_x_max, laser_y_min, laser_y_m
     y_points = len_y / grid_size
     y_points_as_columns = math.ceil(y_points)
 
+    print(x_points_as_row, y_points_as_columns)
+
     return x_points_as_row, y_points_as_columns
 
 
